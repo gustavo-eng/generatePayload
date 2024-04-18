@@ -1,8 +1,5 @@
-let constructedObjectAttributes = {"attributes":[]}; 
-const payloadTest = {};
-let biggerAttrFromActive = "status_breakdownFailure_status_s_inst_"
-let pacoteDeDados = 230; 
 
+const payloadTest = {};
 
 let  sizeForType = {
     "string": 8,
@@ -12,10 +9,11 @@ let  sizeForType = {
 
 let number0fVariablePerType = {
     "string": 2,
-    "number":1,
+    "number":4,
     "bool": 2
-} 
+}
 
+let pacoteDeDados = 230; 
 
 let qtdVariabel = Object.values(number0fVariablePerType).reduce((accumulator, currentValue) => accumulator + currentValue, 0); 
 
@@ -52,6 +50,7 @@ function generateRandomBoolean() {
     }
 }
 
+let biggerAttrFromActive = "status_breakdownFailure_status_s_inst_"
 
 Array.from({length: qtdVariabel}).forEach((_, index) => {
     payloadTest[biggerAttrFromActive+(index+1)] = [];
@@ -74,33 +73,7 @@ Object.keys(payloadTest).forEach((key, index) => {
     } 
 });
 
-
-//Função utilizada para criar o objeto 
-Object.keys(payloadTest).forEach((nameAttr, index) => {
-
-    let dataType = '';
-    
-    if(index + 1 <= number0fVariablePerType.number) {
-        dataType = "number";
-    } else if( (index + 1) > number0fVariablePerType.number && (index + 1) <= (number0fVariablePerType.number +  number0fVariablePerType.bool)) {
-        dataType = "boolean";
-    } else  {
-        dataType = "string";
-    } 
-
-    constructedObjectAttributes["attributes"].push({
-        "name": nameAttr, 
-        "dataType": dataType,
-    })
-    
-}); 
-
-console.log("Atributo marcado --- > ");
-console.log(constructedObjectAttributes);
+// Adicionar código do Guilherme 
 
 
-console.log('********************************************************');
-console.log('\n \n \n');
-//payloadTest
 
-console.log(payloadTest)

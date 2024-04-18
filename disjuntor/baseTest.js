@@ -65,3 +65,40 @@ console.log(obj)
 console.log(JSON.stringify(obj["pressureSf6_phase_1_u_s_stat"]))
 
 
+/*
+
+//todo Verificar o tamanho de cada string 
+// no final o atributo deve corresponder a quantidade máxima de string segundo 
+// a documentação da plataforma 
+/*
+const payload = {
+
+    "contactWear": [0.2, 0.33] // string 
+    "currentCoil": [0.32], //string
+    "currentMotor": [54], // string
+    "daysWithoutChange": [189], //string
+    "dewPointSf6": 234 // string 
+    "pressureSf6_phase_1_u_s_stat": [3.5,5,6.243], //3, 
+    "pressureSf6_phase_2_u_s_stat": [], //3, 
+    "pressureSf6_phase_3_u_s_stat": ['3.34'], //3, 
+    "status_blocker_status_s_inst": [], //false,
+    "status_breakdownFailure_status_s_inst" : [], //true, 
+    "status_closedCoil1_status_s_inst" : [], // true, 
+    "status_closedCoil2_status_s_inst" : [], //true, 
+    "status_mainContact_status_s_inst" : [], // true, 
+    "status_motor_status_s_inst" : [], //true, 
+    "status_openCoil1_status_s_inst" :[],// true, 
+    "status_openCoil2_status_s_inst" : [], // true, 
+    "status_poleDiscordanceRelay_status_s_inst" : [], //true, 
+    "status_reclosing_status_s_inst" :  true, 
+    "status_voltageRelayAC_status_s_inst" : true, 
+    "status_voltageRelayDC_status_s_inst" : true, 
+    "temperatureSF6_phase_1_u_s_stat" : 1713302100000, // string 
+    "temperatureSF6_phase_2_u_s_stat" : 1713302100000, // string
+    "temperatureSF6_phase_3_u_s_stat" : 1713302100000,  // string 
+    "timestamp": [412413134134124] // string 
+
+};
+*/ 
+
+// let valor1 = [3.4]
