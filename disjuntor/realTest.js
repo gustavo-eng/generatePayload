@@ -1,23 +1,25 @@
 let constructedObjectAttributes = {"attributes":[]}; 
 const payloadTest = {};
 let biggerAttrFromActive = "status_breakdownFailure_status_s_inst_"
-let pacoteDeDados = 230; 
+let pacoteDeDados = 10; 
 
+// string: {"size: 234", "isNumeric": true,  configNumber: {"decimalCase": 8, "pontoFlutuante": 1}, chars: 8  }
 
 let  sizeForType = {
     "string": 8,
     "number": {"decimalCase": 8, "pontoFlutuante": 1}, // Ex 20.20
-    "boolean":true 
+    //"boolean":true 
 }
 
 let number0fVariablePerType = {
     "string": 2,
     "number":1,
-    "bool": 2
+    "bool": 0
 } 
 
 
 let qtdVariabel = Object.values(number0fVariablePerType).reduce((accumulator, currentValue) => accumulator + currentValue, 0); 
+
 
 //function generateRandomFloat(decim)
 function generateRandomFloat(digitsBeforeDecimal, decimals) {
@@ -30,6 +32,7 @@ function generateRandomFloat(digitsBeforeDecimal, decimals) {
 
     return result;
 }
+
 
 
 function generateRandomString(length) {
@@ -72,6 +75,7 @@ Object.keys(payloadTest).forEach((key, index) => {
             payloadTest[key].push(generateRandomString(sizeForType.string)) 
         }
     } 
+
 });
 
 
@@ -87,6 +91,7 @@ Object.keys(payloadTest).forEach((nameAttr, index) => {
     } else  {
         dataType = "string";
     } 
+    dataType = "string"; // forced 
 
     constructedObjectAttributes["attributes"].push({
         "name": nameAttr, 
@@ -95,12 +100,22 @@ Object.keys(payloadTest).forEach((nameAttr, index) => {
     
 }); 
 
-console.log("Atributo marcado --- > ");
-console.log(constructedObjectAttributes);
 
 
-console.log('********************************************************');
-console.log('\n \n \n');
-//payloadTest
+let payload = {}
 
-console.log(payloadTest)
+for(const [key, value] of Object.entries(payloadTest)) {
+
+    payload[key] = value
+    //payload[key] = JSON.stringify(value); 
+}
+
+//console.log(" *** payload *** ");
+
+console.log(typeof payloadTest["status_breakdownFailure_status_s_inst_1"]);
+console.log(payloadTest["status_breakdownFailure_status_s_inst_1"]);
+
+
+console.log('=======')
+console.log(constructedObjectAttributes)
+
